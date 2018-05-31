@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.demo.dao.mapper.DemoOrderMapper">
+  <resultMap id="BaseResultMap" type="org.demo.model.po.DemoOrder">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="goodid" jdbcType="VARCHAR" property="goodid" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, amount, goodid, address, phone, createtime, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_demo_order
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_demo_order
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="org.demo.model.po.DemoOrder">
+    insert into t_demo_order (id, amount, goodid, 
+      address, phone, createtime, 
+      updatetime)
+    values (#{id,jdbcType=VARCHAR}, #{amount,jdbcType=INTEGER}, #{goodid,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="org.demo.model.po.DemoOrder">
+    insert into t_demo_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="goodid != null">
+        goodid,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="goodid != null">
+        #{goodid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.demo.model.po.DemoOrder">
+    update t_demo_order
+    <set>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="goodid != null">
+        goodid = #{goodid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.demo.model.po.DemoOrder">
+    update t_demo_order
+    set amount = #{amount,jdbcType=INTEGER},
+      goodid = #{goodid,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+   <select id="selectByProperties" parameterType="org.demo.model.po.DemoOrder" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_demo_order
+    where 1=1
+    <if test="goodid != null">
+      and goodid = #{goodid,jdbcType=VARCHAR}
+    </if>
+    <if test="address != null">
+      and address = #{address,jdbcType=VARCHAR}
+    </if>
+    <if test="phone != null">
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="id != null">
+      and id = #{id,jdbcType=VARCHAR}
+    </if>
+    order by createtime desc
+  </select>
+</mapper>
