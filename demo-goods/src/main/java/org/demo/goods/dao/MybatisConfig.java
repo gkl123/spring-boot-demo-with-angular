@@ -6,6 +6,7 @@ import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -14,16 +15,22 @@ import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 @Configuration
 public class MybatisConfig {
+    @Value("${jdbc.url}")
     private static String jdbcUrl;
     
+    @Value("${jdbc.username}")
     private static String jdbcUserName;
     
+    @Value("${jdbc.password}")
     private static String jdbcPassword;
     
+    @Value("${jdbc.driver-class-name}")
     private static String jdbcDriver;
     
+    @Value("${mybatis.mapperLocations}")
     private static String mybatisMappingLocation;
     
+    @Value("${mybatis.typeAliasesPackage}")
     private static String mybatisModelLocation;
     
     @Bean
