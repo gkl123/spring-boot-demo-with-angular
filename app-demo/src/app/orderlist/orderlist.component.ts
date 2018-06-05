@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
 import { Order } from '../order';
 import { OrderService } from '../order.service';
 import { orders } from '../orders';
@@ -22,7 +24,7 @@ export class OrderlistComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-
+    private location : Location
   ) { }
 
   ngOnInit() {
@@ -45,8 +47,19 @@ export class OrderlistComponent implements OnInit {
     console.log(this._orders)
   }
 
-  print(id : string) : void {
-    console.log(id)
+  deleteOrder(order : Order) : void {
+    console.log(order);
+    this.orderService.deleteOrder(order)
+    .toPromise()
+    .then(rs=>{console.log('delete success') ; this.getOrders();})
+    .catch(rs => {console.log(rs)});
+    
+  }
+
+  
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

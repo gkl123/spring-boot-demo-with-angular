@@ -1,6 +1,6 @@
 <p-dropdown [options]="results" [(ngModel)]="selectKey" optionLabel="name">
 </p-dropdown>
-<input type='text' placeholder='过滤条件' [(ngModel)]="inputValue">
+<input class=myinput type='text' placeholder='过滤条件' [(ngModel)]="inputValue">
 <p-button label="getOrderSelect" (onClick)="getOrdersSelected()"></p-button>
 
 <p-dataTable [value]="_orders">
@@ -10,10 +10,10 @@
   <p-column field="createtime" header="订单时间"></p-column>
   <p-column header="操作">
     <ng-template let-order="rowData" let-ri="rowIndex" pTemplate="body">
-      <p-button label="删除" (onClick)="deleteOrder()"></p-button>
+      <p-button label="删除" (onClick)="deleteOrder(order)"></p-button>
       <p-button label="修改" routerLink="detail/{{order.id}}"></p-button>
     </ng-template>
   </p-column>
 </p-dataTable>
 
-<router-outlet></router-outlet>
+<p-button label="new order" routerLink = "add/order"></p-button>

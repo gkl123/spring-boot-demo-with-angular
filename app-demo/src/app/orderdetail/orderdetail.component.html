@@ -1,24 +1,40 @@
+<div class="adding">
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">
+      <i class="fa fa-address-card"></i>
+    </span>
+    <input type="text" pInputText placeholder="{{order.id}}" readonly="readonly"/>
+  </div>
 
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-eraser"></i></span>
-  <input type="text" pInputText [(ngModel)]="order.goodid"/>      
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">
+      <i class="fa fa-eraser"></i>
+    </span>
+    <input type="text" pInputText [(ngModel)]="order.goodid" />
+  </div>
+
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">
+      <i class="fa fa-home"></i>
+    </span>
+    <input type="text" pInputText [(ngModel)]="order.address" />
+  </div>
+
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">
+      <i class="fa fa-mobile"></i>
+    </span>
+    <input type="text" pInputText [(ngModel)]="order.phone" />
+  </div>
+
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">
+      <i class="fa fa-clock-o"></i>
+    </span>
+    <input type="text" pInputText placeholder={{order.createtime}} readonly="readonly" />
+  </div>
+  <div>
+    <p-button label="update order" (onClick)="updateOrder()"></p-button>
+    <p-button label="go back" (onClick)="goBack()"></p-button>
+  </div>
 </div>
-
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-home"></i></span>
-  <input type="text" pInputText [(ngModel)]="order.address"/>     
-</div>
-
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-mobile"></i></span>
-  <input type="text" pInputText [(ngModel)]="order.phone"/>    
-</div>
-
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-clock-o"></i></span>
-  <input type="text" pInputText placeholder={{order.createtime}} readonly="readonly" />     
-</div>
-
-
-
-  

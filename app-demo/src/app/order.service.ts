@@ -38,12 +38,12 @@ export class OrderService {
   }
 
   updateOrder(order : Order) : Observable<Order> {
-    const uri : string = '';
+    const uri : string = 'http://localhost:8091/order/updateOrder';
     return this.http.post<Order>(uri, order);
   }
 
-  deleteOrder(oid : string) : void {
+  deleteOrder(order : Order) : Observable<Order> {
     const uri : string = 'http://localhost:8091/order/delete';
-    this.http.post<Order>(uri, {id : oid});
+    return this.http.post<Order>(uri, order);
   }
 }

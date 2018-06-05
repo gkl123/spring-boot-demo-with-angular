@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Location } from '@angular/common';
+
 import { Order } from '../order';
 import { OrderService } from '../order.service';
 
@@ -10,7 +12,10 @@ import { OrderService } from '../order.service';
 export class OrderaddComponent implements OnInit {
   @Input() order: Order =  new Order;
 
-  constructor(private orderService : OrderService) { }
+  constructor(
+    private orderService : OrderService,
+    private location : Location
+  ) { }
 
   ngOnInit() {
   }
@@ -21,7 +26,11 @@ export class OrderaddComponent implements OnInit {
       .toPromise()
       .then(rs=>{console.log(rs)})
       .catch(rs=>{console.log(rs)})
+      this.location.back();
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }
 

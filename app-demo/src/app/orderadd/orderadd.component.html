@@ -1,23 +1,33 @@
-<p-button label="add Order" (click) = "addOrder()"></p-button>
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-eraser"></i></span>
-  <input type="text" pInputText [(ngModel)]="order.goodid"/>      
+<div class="adding" align="center">
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">好评编号
+      <i class="fa fa-eraser"></i>
+    </span>
+    <input type="text" pInputText [(ngModel)]="order.goodid" />
+  </div>
+
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">地址信息
+      <i class="fa fa-home"></i>
+    </span>
+    <input type="text" pInputText [(ngModel)]="order.address" />
+  </div>
+
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">手机号
+      <i class="fa fa-mobile"></i>
+    </span>
+    <input type="text" pInputText [(ngModel)]="order.phone" />
+  </div>
+
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon">金额
+      <i class="fa fa-money"></i>
+    </span>
+    <input type="text" pInputText placeholder={{order.amount}} />
+  </div>
+  <div>
+    <p-button label="go back" (onClick)="goBack()"></p-button>
+    <p-button label="add" (click)="addOrder()"></p-button>
+  </div>
 </div>
-
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-home"></i></span>
-  <input type="text" pInputText [(ngModel)]="order.address"/>     
-</div>
-
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-mobile"></i></span>
-  <input type="text" pInputText [(ngModel)]="order.phone"/>    
-</div>
-
-<div class="ui-inputgroup">
-  <span class="ui-inputgroup-addon"><i class="fa fa-clock-o"></i></span>
-  <input type="text" pInputText placeholder={{order.amount}} />     
-</div>
-
-
-

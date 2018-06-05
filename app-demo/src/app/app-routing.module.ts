@@ -6,10 +6,11 @@ import { OrderaddComponent } from './orderadd/orderadd.component';
 
 const routes : Routes = [
   {path : "order/list", component : OrderlistComponent, 
-    children : [{path : "detail/:id" , component : OrderdetailComponent}]
+    // children : [{path : "detail/:id" , component : OrderdetailComponent}]
   },
-  // {path : "order/list/detail/:id", component : OrderdetailComponent},
-  {path : "order/add", component : OrderaddComponent}
+  {path : "order/list/detail/:id", component : OrderdetailComponent},
+  {path : "order/list/add/order", component : OrderaddComponent},
+  {path: '', redirectTo: 'order/list', pathMatch: 'full' }
 ]
 
 

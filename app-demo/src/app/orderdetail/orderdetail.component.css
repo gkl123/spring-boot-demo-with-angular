@@ -1,0 +1,12 @@
+.ui-inputgroup-addon {
+    padding: 5px;
+    width: 90px;
+    text-align:right
+}
+
+.adding{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
