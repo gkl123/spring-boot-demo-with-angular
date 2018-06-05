@@ -2,9 +2,6 @@ package org.demo.web.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.demo.model.po.DemoOrder;
 import org.demo.service.DemoOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
