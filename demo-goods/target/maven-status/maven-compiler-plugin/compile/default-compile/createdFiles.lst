@@ -1,0 +1,9 @@
+org\demo\base\BaseService.class
+org\demo\goods\model\DemoGoods.class
+org\demo\goods\service\DemoGoodsService.class
+org\demo\goods\App.class
+org\demo\goods\dao\MybatisConfig.class
+org\demo\goods\serviceimpl\DemoGoodsServiceImpl.class
+org\demo\base\BaseServiceImpl.class
+org\demo\goods\dao\mapper\DemoGoodsMapper.class
+org\demo\goods\controller\DemoGoodsController.class

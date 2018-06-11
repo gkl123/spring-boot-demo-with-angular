@@ -11,9 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
  * spring boot starter
  *
  */
-@EnableEurekaClient
+//@EnableEurekaClient
 @SpringBootApplication(exclude=DataSourceAutoConfiguration.class)
-@ComponentScan(basePackages = {"org.demo.service", "org.demo.dao"})
+@ComponentScan(basePackages = {"org.demo"})
 @MapperScan(basePackages={"org.demo.dao.mapper"})
 public class AppWebApplication{
 

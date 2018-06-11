@@ -51,6 +51,26 @@
             <version>4.3.14.RELEASE</version>
         </dependency>
         
+        <!-- 添加redis缓存组件依赖 -->
+        <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-redis</artifactId>  
+            <version>1.0.1.RELEASE</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>redis.clients</groupId>  
+            <artifactId>jedis</artifactId>  
+            <version>2.4.2</version>  
+        </dependency>  
+        
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+                    
+        
         <!-- 本地依赖 -->
         <dependency>
 			<groupId>com.demo</groupId>

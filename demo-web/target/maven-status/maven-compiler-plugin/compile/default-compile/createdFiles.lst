@@ -1,2 +1,5 @@
 org\demo\web\AppWebApplication.class
+org\demo\web\filter\CorsFilter.class
+org\demo\web\controller\TestController.class
 org\demo\web\controller\DemoOrderController.class
+org\demo\web\controller\ChildClass.class

@@ -14,24 +14,24 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 @Configuration
-public class MybatisConfig {
+public class MyBatisConfig {
     @Value("${jdbc.url}")
-    private static String jdbcUrl;
+    private String jdbcUrl;
     
     @Value("${jdbc.username}")
-    private static String jdbcUserName;
+    private String jdbcUserName;
     
     @Value("${jdbc.password}")
-    private static String jdbcPassword;
+    private String jdbcPassword;
     
     @Value("${jdbc.driver-class-name}")
-    private static String jdbcDriver;
+    private String jdbcDriver;
     
     @Value("${mybatis.mapperLocations}")
-    private static String mybatisMappingLocation;
+    private String mybatisMappingLocation;
     
     @Value("${mybatis.typeAliasesPackage}")
-    private static String mybatisModelLocation;
+    private String mybatisModelLocation;
     
     @Bean
     public DataSource getDataSource() {

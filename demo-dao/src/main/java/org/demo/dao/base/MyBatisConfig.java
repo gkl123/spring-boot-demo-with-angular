@@ -31,10 +31,10 @@ public class MyBatisConfig {
     private String jdbcPassword;
     
     @Value("${mybatis.typeAliasesPackage}")
-    private String typeAliasesPackage = "classpath:org/demo/model/po";
+    private String typeAliasesPackage;
     
     @Value("${mybatis.mapperLocations}")
-    private String mapperLocations = "classpath:org/demo/dao/mapper/mapping/*.xml";
+    private String mapperLocations;
     
 
     /**  

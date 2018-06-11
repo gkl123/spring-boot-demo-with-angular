@@ -2,6 +2,7 @@ package org.demo.dao.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.demo.model.po.DemoOrder;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,7 @@ public interface DemoOrderMapper {
 
     int insertSelective(DemoOrder record);
 
-    DemoOrder selectByPrimaryKey(String id);
+    DemoOrder selectByPrimaryKey(@Param("id") String id);
 
     int updateByPrimaryKeySelective(DemoOrder record);
 
